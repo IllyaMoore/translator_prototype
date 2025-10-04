@@ -1,6 +1,6 @@
 from translatepy.translators.google import GoogleTranslate
 
-text = ""
+text = "" 
 
 with open(text, "r") as file:
     f = file.read().replace('\n', '')
@@ -8,4 +8,11 @@ with open(text, "r") as file:
 
 gtranslate = GoogleTranslate()
 trans = gtranslate.translate(f, "Ukrainian")
+
+#debug massage 
 print(trans)
+
+BD = open("translations/translationTestBD.txt", "w") 
+
+BD.write(f"{trans}, \n")
+BD.close()
