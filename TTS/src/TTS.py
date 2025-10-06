@@ -3,8 +3,15 @@ import torch
 import torchaudio
 import soundfile as sf
 
+import os
+from dotenv import load_dotenv, dotenv_values
+
+load_dotenv()
+
+TRANSLATIONS_BD = os.getenv("TRANSLATIONS_BD")
+
 # --- Параметри ---
-with open("/home/moore/code/translator_prototype/TTS/src/translations/translationTestBD.txt", 'r') as file:
+with open(TRANSLATIONS_BD, 'r') as file:
     text = file.read().replace('\n', '')
 
 
