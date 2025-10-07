@@ -8,6 +8,10 @@ from dotenv import load_dotenv, dotenv_values
 
 load_dotenv()
 
+import time
+
+benchmurk = time.time() 
+
 TRANSLATIONS_BD = os.getenv("TRANSLATIONS_BD")
 
 # --- Параметри ---
@@ -48,4 +52,6 @@ if pitch_shift != 0:
 # --- Збереження аудіо ---
 sf.write("output.wav", waveform.numpy(), samplerate=24000)
 print(f"Audio saved to output.wav with pitch shift {pitch_shift} semitones.")
+
+print(f'\nTTS done in {format(time.time() - benchmurk, '.1f')} sec \n')
 

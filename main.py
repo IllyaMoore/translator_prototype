@@ -17,14 +17,13 @@ TTS = os.getenv("TTS")
 
 
 # subprocess.run(["python3", CAPTURE_VOICE])
-print("\n")
 subprocess.run(["python3", GET_SPEECH_TXT])
-print("\n")
+
 subprocess.run(["python3", TRANSLATE])
-print("\n")
+
 subprocess.run(["python3", TTS])
-print("\n")
-print(f"Time for execution {format(time.time() - _test_timer, '.0f')} sec")
+print(f"Time to get to full execution {format(time.time() - _test_timer, '.0f')} sec")
+
 print("\n")
 
 

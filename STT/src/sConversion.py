@@ -3,7 +3,9 @@ import os
 from dotenv import load_dotenv, dotenv_values
 
 load_dotenv()
+import time 
 
+benchmurk = time.time()
 
 VOICE_FILE = os.getenv("VOICE_FILE")
 SPEECH_TXT_OUTPUT = os.getenv("SPEECH_TXT_OUTPUT")
@@ -17,3 +19,7 @@ with sr.AudioFile(VOICE_FILE) as source:
 
 with open(SPEECH_TXT_OUTPUT, 'w') as f:
     f.write(text);
+
+print(f"\nconverted in {format(time.time() - benchmurk, '.1f')} sec\n")
+
+
