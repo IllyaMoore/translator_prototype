@@ -1,18 +1,25 @@
 import subprocess
 
-capture_voice = "/home/moore/code/translator_prototype/STT/src/sColection.py"
+import os
 
-get_speech = "/home/moore/code/translator_prototype/STT/src/sConversion.py"
+from dotenv import load_dotenv, dotenv_values
 
-translate = "/home/moore/code/translator_prototype/Trans/src/translate.py"
+load_dotenv()
 
-text_to_speech = ""
+CAPTURE_VOICE = os.getenv("CAPTURE_VOICE")
+
+GET_SPEECH_TXT = os.getenv("GET_SPEECH_TXT")
+
+TRANSLATE = os.getenv("TRANSLATE")
+
+TTS = os.getenv("TTS")
 
 
-
-subprocess.run(["python3", get_speech])
+# subprocess.run(["python3", CAPTURE_VOICE])
 print("\n")
-subprocess.run(["python3", translate])
+subprocess.run(["python3", GET_SPEECH_TXT])
 
+subprocess.run(["python3", TRANSLATE])
 
+subprocess.run(["python3", TTS])
 
